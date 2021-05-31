@@ -1,17 +1,19 @@
 #include "push_swap.h"
 
-int		ft_is_valid(s_stack a)
+int		ft_is_valid(s_stack *a, int *d)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while (i < (a.count - 1))
+	while (i < (a->count - 1))
 	{
 		j = i + 1;
-		while (j < a.count)
+		while (j < a->count)
 		{
-			if (a.array[i] == a.array[j])
+			if (a->array[i] > a->array[j])
+				*d = 1;
+			if (a->array[i] == a->array[j])
 				return (1);
 			j++;
 		}

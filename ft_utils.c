@@ -2,13 +2,18 @@
 
 void       ft_init(s_stack *a, int ac, char **ar)
 {
-    int i;
+	int i;
 
-    i = -1;
-    if (!(a->array = (int *)malloc((ac - 1) * 4)))
-        return ;
-    a->top = ac - 1;
-    a->count = ac - 1;
-    while (++i < (ac - 1))
-        a->array[i] = ft_atoi(ar[i + 1]);
+	i = -1;
+	if (!(a->array = (int *)malloc((ac - 1) * 4)))
+		return ;
+	a->count = ac - 1;
+	while (++i < (ac - 1))
+		a->array[i] = ft_atoi(ar[i + 1]);
+}
+
+void        ft_write(char *str)
+{
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
 }

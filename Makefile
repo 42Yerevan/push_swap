@@ -15,7 +15,11 @@ $(NAME) : ${OBJS}
 		${AR} ${NAME} ${OBJS}
 
 all :	${NAME}
-		gcc -L. -lpush_swap push_swap.c && ./a.out 2 1 3 6 5 8
+
+compile:	${NAME}
+			gcc -L. -lpush_swap push_swap.c && ./a.out 1 2 3 4 5
+			rm a.out
+
 
 clean : 
 		${RM} ${OBJS}
