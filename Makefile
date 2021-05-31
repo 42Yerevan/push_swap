@@ -17,7 +17,7 @@ $(NAME) : ${OBJS}
 all :	${NAME}
 
 compile:	${NAME}
-			gcc -L. -lpush_swap push_swap.c && ./a.out 1 2 3 4 5
+			gcc -L. -lpush_swap push_swap.c && ./a.out 45 -78 1 -94 98 75 28 0 #54 33 -84 25 16
 			rm a.out
 
 

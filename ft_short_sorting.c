@@ -16,7 +16,7 @@
 
 void    ft_short_sorting(s_stack *a)
 {
-  int  i;
+	int  i;
   int  p;
   int  index;
 
@@ -26,7 +26,7 @@ void    ft_short_sorting(s_stack *a)
   if (a->count == 2)
   {
 		if (a->array[0] > a->array[1])
-	  ft_write(ft_swap(a, 'a'));
+	  	ft_write(ft_swap(a, 'a'));
 		return ;
   }
   while (++i < a->count)
@@ -53,31 +53,6 @@ void    ft_short_sorting(s_stack *a)
   }
 }
 
-// void	ft_test(s_stack *a, s_stack *b, int i)
-// {
-// 	ft_write(ft_push(b, a, 'a'));
-// 	if (i == 2)
-// 			ft_write(ft_swap(a, 'a'));
-//   		if (i == 3)
-// 		{
-// 			ft_write(ft_swap(a, 'a'));
-// 			ft_write(ft_push(a, b, 'b'));
-// 			ft_write(ft_swap(a, 'a'));
-// 			ft_write(ft_push(b, a, 'b'));
-// 		}
-//   		if (i == 4 && a->count == 4)
-// 			ft_write(ft_rotate(a, 'a'));
-// 		else if (i == 4 && a->count > 4)
-// 		{
-// 			ft_write(ft_rev_rotate(a, 'a'));
-// 			ft_write(ft_push(a, b, 'b'));
-// 			ft_write(ft_rev_rotate(a, 'a'));
-// 			ft_write(ft_push(b, a, 'a'));
-// 		}
-//   		if (i == 5)
-// 			ft_write(ft_rev_rotate(a, 'a'));
-// }
-
 void	ft_five_number_sorting(s_stack *a, s_stack *b)
 {
 	int i;
@@ -90,18 +65,23 @@ void	ft_five_number_sorting(s_stack *a, s_stack *b)
 		i = -1;
 		ft_write(ft_push(b, a, 'a'));
 		while (++i < a->count)
-		if (a->array[i] > a->array[0])
-			break ;
+			if (a->array[i] > a->array[0])
+				break ;
+		if (a->count == 3)
+		{
+			ft_short_sorting (a);
+			continue ;
+		}
 		if (i == 2)
 			ft_write(ft_swap(a, 'a'));
-  		if (i == 3)
+  	if (i == 3)
 		{
 			ft_write(ft_swap(a, 'a'));
 			ft_write(ft_push(a, b, 'b'));
 			ft_write(ft_swap(a, 'a'));
 			ft_write(ft_push(b, a, 'b'));
 		}
-  		if (i == 4 && a->count == 4)
+  	if (i == 4 && a->count == 4)
 			ft_write(ft_rotate(a, 'a'));
 		else if (i == 4 && a->count > 4)
 		{
@@ -112,5 +92,42 @@ void	ft_five_number_sorting(s_stack *a, s_stack *b)
 		}
   		if (i == 5)
 			ft_write(ft_rev_rotate(a, 'a'));
+	}
+}
+
+void	ft_middle_sorting(s_stack *a, s_stack *b)
+{
+	int i;
+	int	p;
+	int	index;
+
+	while (a->count > 0)
+	{
+		i = 0;
+		p = 0;
+		index = 0;
+		while (i < a->count)
+		{
+			if (a->array[i] < p)
+			{
+				index = i;
+				p = a->array[i];
+			}
+				printf("index --- %d\n", index);
+			i++;
+		}
+		// if (index <= (a->count / 2))
+			while (index > 0)
+			{
+				ft_write(ft_rotate(a, 'a'));
+				index--;
+			}
+		// else
+		// 	while (index < a->count - 1)
+		// 	{
+		// 		ft_write(ft_rev_rotate(a, 'a'));
+		// 		index++;
+		// 	}
+		ft_write(ft_push(a, b, 'b'));
 	}
 }

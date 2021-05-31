@@ -33,7 +33,7 @@ int		ft_check(char **arg, int n)
 		j = 0;
 		while (arg[i][j])
 		{
-			if (!(arg[i][j] >= '0' && arg[i][j] <= '9'))
+			if (!(arg[i][j] >= '0' && arg[i][j] <= '9') && arg[i][j] != '-')
 				return (1);
 			j++;
 		}
