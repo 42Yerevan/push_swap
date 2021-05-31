@@ -29,7 +29,7 @@ int     main(int ac, char **av)
 		ft_five_number_sorting(&a, &b);
 	else if (ac <= 101 && d)
 		ft_middle_sorting(&a, &b);
-	while (i++ < (b.count - 1))
-		printf("a.num --- %d\n", b.array[i]);
+	while (i++ < (a.count - 1))
+		printf("a.num --- %d\n", a.array[i]);
 	return (0);
 }

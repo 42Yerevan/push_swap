@@ -103,8 +103,8 @@ void	ft_middle_sorting(s_stack *a, s_stack *b)
 
 	while (a->count > 0)
 	{
-		i = 0;
-		p = 0;
+		i = 1;
+		p = a->array[0];
 		index = 0;
 		while (i < a->count)
 		{
@@ -113,21 +113,23 @@ void	ft_middle_sorting(s_stack *a, s_stack *b)
 				index = i;
 				p = a->array[i];
 			}
-				printf("index --- %d\n", index);
 			i++;
 		}
-		// if (index <= (a->count / 2))
+		if (index <= (a->count / 2))
 			while (index > 0)
 			{
 				ft_write(ft_rotate(a, 'a'));
 				index--;
 			}
-		// else
-		// 	while (index < a->count - 1)
-		// 	{
-		// 		ft_write(ft_rev_rotate(a, 'a'));
-		// 		index++;
-		// 	}
+		else
+			while (index < a->count)
+			{
+				ft_write(ft_rev_rotate(a, 'a'));
+				index++;
+			}
 		ft_write(ft_push(a, b, 'b'));
 	}
+	i = -1;
+	while (++i < b->count)
+		ft_write(ft_push(b, a, 'a'));
 }
