@@ -27,5 +27,6 @@ void    ft_write(char *str);
 size_t	ft_strlen(const char *str);
 void	ft_five_number_sorting(s_stack *a, s_stack *b); //Testing
 void	ft_middle_sorting(s_stack *a, s_stack *b); //Testing
+void	x_g();
 
 #endif

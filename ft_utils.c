@@ -14,11 +14,7 @@ void       ft_init(s_stack *a, int ac, char **ar)
 
 void        ft_write(char *str)
 {
-	static int i;
-
-	i = 0;
-	i++;
-	printf("count --- %d\n", i);
+	x_g();
 	write(1, str, ft_strlen(str));
 	write(1, "\n", 1);
 }

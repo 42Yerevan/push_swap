@@ -6,6 +6,13 @@ void	ft_error(void)
 	exit(-1);
 }
 
+int		x = 0;
+
+void	x_g()
+{
+	x++;
+}
+
 int     main(int ac, char **av)
 {
 	int			i;
@@ -31,5 +38,7 @@ int     main(int ac, char **av)
 		ft_middle_sorting(&a, &b);
 	while (i++ < (a.count - 1))
 		printf("a.num --- %d\n", a.array[i]);
+	printf("combination count is ---  %d\n", x);
+	free(b.array);
 	return (0);
 }
