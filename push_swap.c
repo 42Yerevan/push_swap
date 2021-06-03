@@ -8,7 +8,7 @@ void	ft_error(void)
 
 int		x = 0;
 
-void	x_g()
+void	x_g()	
 {
 	x++;
 }
@@ -29,16 +29,15 @@ int     main(int ac, char **av)
 	ft_init(&a, ac, av);
 	if (ft_is_valid(&a, &d))
 		ft_error();
-	// printf("num ----- %d\n", ac);
 	if (ac <= 4 && d)
 		ft_short_sorting(&a);
 	else if (ac <= 6 && d)
 		ft_five_number_sorting(&a, &b);
-	else if (ac <= 101 && d)
-		ft_middle_sorting(&a, &b);
-	while (i++ < (a.count - 1))
-		printf("a.num --- %d\n", a.array[i]);
-	printf("combination count is ---  %d\n", x);
+	else if (ac <= 501 && d)
+		ft_middle_sorting(&a, &b, (ac - 1));
+	// while (i++ < (a.count - 1))
+	// 	printf("%d. a.num --- %d\n", i, a.array[i]);
+	// printf("combination count is ---  %d\n", x);
 	free(b.array);
 	return (0);
 }

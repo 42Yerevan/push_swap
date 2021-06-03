@@ -28,7 +28,7 @@ int		ft_check(char **arg, int n)
 	int	j;
 
 	i = 1;
-	while (i < n)
+	while (i < n + 1)
 	{
 		j = 0;
 		while (arg[i][j])
@@ -37,7 +37,7 @@ int		ft_check(char **arg, int n)
 				return (1);
 			j++;
 		}
-		if (ft_atoi(arg[i]) < -2147483648 && ft_atoi(arg[i]) > 2147483647)
+		if (ft_atoi(arg[i]) < -2147483648 || ft_atoi(arg[i]) > 2147483647)
 			return (1);
 		i++;
 	}

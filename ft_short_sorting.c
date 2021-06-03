@@ -42,36 +42,55 @@ void    ft_short_sorting(s_stack *a)
 void	ft_five_number_sorting(s_stack *a, s_stack *b)
 {
 	int i;
+	int p;
 	int index;
 
+	i = 0;
+	index = 0;
+	p = a->array[0];
+	while (i < a->count)
+	{
+		if (p < a->array[i])
+			index = i;
+		i++;
+	}
+	if (index <= 3)
+		while (--index > 0)
+			ft_write(ft_rotate(a, 'a'));
+	else
+		while (index++ < a->count)
+			ft_write(ft_rev_rotate(a, 'a'));
 	ft_write(ft_push(a, b, 'b'));
 	ft_write(ft_push(a, b, 'b'));
 	ft_short_sorting(a);
 	while (b->count > 0)
 	{
-		i = 1;
+		i = 0;
 		index = 0;
 		ft_write(ft_push(b, a, 'a'));
 		while (i < a->count)
-			if (a->array[0] > a->array[i++])
+		{
+			if (a->array[0] > a->array[i])
 				index = i;
+			i++;
+		}
 		if (a->count == 3)
 		{
 			ft_short_sorting (a);
 			continue ;
 		}
-		if (index == 2)
+		if (index == 1)
 			ft_write(ft_swap(a, 'a'));
-  		if (index == 3)
+  		if (index == 2)
 		{
 			ft_write(ft_swap(a, 'a'));
 			ft_write(ft_push(a, b, 'b'));
 			ft_write(ft_swap(a, 'a'));
 			ft_write(ft_push(b, a, 'b'));
 		}
-  		if (index == 4 && a->count == 4)
+  		if (index == 3 && a->count == 4)
 			ft_write(ft_rotate(a, 'a'));
-		else if (index == 4 && a->count > 4)
+		else if (index == 3 && a->count > 4)
 		{
 			ft_write(ft_rev_rotate(a, 'a'));
 			ft_write(ft_push(a, b, 'b'));
@@ -79,17 +98,35 @@ void	ft_five_number_sorting(s_stack *a, s_stack *b)
 			ft_write(ft_push(b, a, 'a'));
 			ft_write(ft_rotate(a, 'a'));
 		}
-  		if (index == 5)
-			ft_write(ft_rev_rotate(a, 'a'));
+  		if (index == 4)
+			ft_write(ft_rotate(a, 'a'));
 	}
 }
 
-void	ft_middle_sorting(s_stack *a, s_stack *b)
+void	ft_middle_sorting(s_stack *a, s_stack *b, int n)
 {
 	int i;
-	int	p;
+	int p;
+	int len;
 	int	index;
 
+	i = 0;
+	len = 0;
+	p = a->array[0];
+	while (i < n)
+	{
+		if (a->array[0] > p)
+		{
+			ft_write(ft_push(a, b, 'b'));
+			len++;
+		}
+		else
+			ft_write(ft_rotate(a, 'a'));
+		i++;
+	}
+	i = len + 1;
+	while (--i)
+		ft_write(ft_push(b, a, 'a'));
 	while (a->count > 0)
 	{
 		i = 1;
@@ -124,45 +161,4 @@ void	ft_middle_sorting(s_stack *a, s_stack *b)
 		ft_write(ft_push(b, a, 'a'));
 		i--;
 	}
-
-	// int		i;
-	// int		j;
-	// int		p;
-
-	// i = 0;
-	// while (i < a->count / 2)
-	// {
-	// 	j = 0;
-	// 	p = 0;
-	// 	while (j < a->count)
-	// 	{
-	// 		if (a->array[i] > a->array[j])
-	// 			p = a->array[i];
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
-	// printf("\n\n\n\n\n\n%d\n\n\n\n\n\n", p);
-
-
-// 	// int i;
-// 	// int	p;
-
-// 	// i = 0;
-// 	// p = a->array[a->count - 1];
-//     // // printf("%d\n\n\n", p);
-// 	// while (a->array[0] != p)
-// 	// {
-// 	// 	if (a->array[0] <= p)
-// 	// 			ft_write(ft_rotate(a, 'a'));
-// 	// 	else
-// 	// 		ft_write(ft_push(a, b, 'b'));
-// 	// 	i++;
-// 	// }
-//     // ft_write(ft_rotate(a, 'a'));
-	if (0)
-		ft_write(ft_rotate(b, 'a'));
-//     // i = -1;
-//     // while (++i < a->count)
-// 	//     printf("last --- %d\n", a->array[i]);
 }

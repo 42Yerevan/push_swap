@@ -29,7 +29,7 @@ char    *ft_swap(s_stack *stack, char type)
 {
 	int	n;
 	
-	if (stack->count < 3)
+	if (stack->count < 2)
 		return (NULL);
 	n = stack->array[0];
 	stack->array[0] = stack->array[1];

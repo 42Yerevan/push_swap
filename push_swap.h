@@ -11,7 +11,7 @@ typedef	struct	t_stack
 	int		*array;
 }				s_stack;
 
-int		ft_atoi(char *str);
+long	ft_atoi(char *str);
 void	ft_init(s_stack *a, int ac, char **arr);
 char	*ft_swap(s_stack *stack, char type);
 char	*ft_double_swap(s_stack *a, s_stack *b);
@@ -26,7 +26,7 @@ void    ft_short_sorting(s_stack *stack); //Testing
 void    ft_write(char *str);
 size_t	ft_strlen(const char *str);
 void	ft_five_number_sorting(s_stack *a, s_stack *b); //Testing
-void	ft_middle_sorting(s_stack *a, s_stack *b); //Testing
+void	ft_middle_sorting(s_stack *a, s_stack *b, int n); //Testing
 void	x_g();
 
 #endif
