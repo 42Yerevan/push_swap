@@ -34,10 +34,10 @@ int     main(int ac, char **av)
 	else if (ac <= 6 && d)
 		ft_five_number_sorting(&a, &b);
 	else if (ac <= 501 && d)
-		ft_middle_sorting(&a, &b, (ac - 1));
-	// while (i++ < (a.count - 1))
-	// 	printf("%d. a.num --- %d\n", i, a.array[i]);
-	// printf("combination count is ---  %d\n", x);
+		ft_advanced_sorting(&a, &b, (ac - 1));
+	while (i++ < (a.count - 1))
+		printf("%d. a.num --- %d\n", i, a.array[i]);
+	printf("combination count is ---  %d\n", x);
 	free(b.array);
 	return (0);
 }
