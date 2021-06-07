@@ -6,21 +6,21 @@ void	ft_error(void)
 	exit(-1);
 }
 
-int		x = 0;
+// int		x = 0;
 
-void	x_g()	
-{
-	x++;
-}
+// void	x_g()	
+// {
+// 	x++;
+// }
 
 int     main(int ac, char **av)
 {
-	int			i;
+	// int			i;
 	int			d;
 	s_stack		a;
 	s_stack		b;
 
-	i = -1;
+	// i = -1;
 	d = 0;
 	b.count = 0;
 
@@ -35,9 +35,16 @@ int     main(int ac, char **av)
 		ft_five_number_sorting(&a, &b);
 	else if (ac <= 501 && d)
 		ft_advanced_sorting(&a, &b, (ac - 1));
-	while (i++ < (a.count - 1))
-		printf("%d. a.num --- %d\n", i, a.array[i]);
-	printf("combination count is ---  %d\n", x);
+	// while (i++ < (a.count - 1))
+	// 	printf("%d. a.num --- %d\n", i, a.array[i]);
+	// printf("combination count is ---  %d\n", x);
+	// i = 0;
+	// while (i < a.count)
+	// {
+	// 	if (((a.array[i] > a.array[i + 1] - 1)) && i != a.count - 1)
+	// 		printf("%dinvalid\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", i);
+	// 	i++;
+	// }
 	free(b.array);
 	return (0);
 }

@@ -22,12 +22,12 @@ char    *ft_rev_rotate(s_stack *stack, char type);
 char    *ft_double_rev_rotate(s_stack *a, s_stack *b);
 int		ft_check(char	**arg, int n);
 int		ft_is_valid(s_stack *a, int *d);
-void    ft_short_sorting(s_stack *stack); //Testing
+void    ft_short_sorting(s_stack *stack);
 void    ft_write(char *str);
 size_t	ft_strlen(const char *str);
-void	ft_five_number_sorting(s_stack *a, s_stack *b); //Testing
-void	ft_middle_sorting(s_stack *a, s_stack *b, int n); //Testing
-void	ft_advanced_sorting(s_stack *a, s_stack *b, int n); //Testing
-void	x_g();
+void	ft_five_number_sorting(s_stack *a, s_stack *b);
+void	ft_middle_sorting(s_stack *a, s_stack *b, int n);
+void	ft_advanced_sorting(s_stack *a, s_stack *b, int n);
+// void	x_g();
 
 #endif

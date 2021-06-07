@@ -45,12 +45,12 @@ void	ft_five_number_sorting(s_stack *a, s_stack *b)
 	int p;
 	int index;
 
-	i = 0;
+	i = 1;
 	index = 0;
 	p = a->array[0];
 	while (i < a->count)
 	{
-		if (p < a->array[i])
+		if (a->array[i] < p)
 			index = i;
 		i++;
 	}
@@ -110,11 +110,13 @@ void	ft_advanced_sorting(s_stack *a, s_stack *b, int n)
 	int		x;
 	int		p;
 	int		len;
+	int 	index;
 	int		arr[n];
 
 	i = -1;
 	x = 0;
 	len = 0;
+	index = 0;
 	while (++i < n)
 		arr[i] = a->array[i];
 	if (0)
@@ -153,9 +155,6 @@ void	ft_advanced_sorting(s_stack *a, s_stack *b, int n)
 	if (a->count > 3)
 		ft_advanced_sorting(a, b, (n - len));
 
-	int index;
-
-	index = 0;
 	while (b->count)
 	{
 		i = 0;
