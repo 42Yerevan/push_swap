@@ -119,8 +119,6 @@ void	ft_advanced_sorting(s_stack *a, s_stack *b, int n)
 	index = 0;
 	while (++i < n)
 		arr[i] = a->array[i];
-	if (0)
-		ft_swap(b, 'b');
 	i = 0;
 	while (i < n)
 	{
@@ -174,7 +172,7 @@ void	ft_advanced_sorting(s_stack *a, s_stack *b, int n)
 		else
 		{
 			while (index++ < b->count)
-				ft_rev_rotate(b, 'b');
+				ft_write(ft_rev_rotate(b, 'b'));
 		}
 		ft_write(ft_push(b, a, 'a'));
 	}

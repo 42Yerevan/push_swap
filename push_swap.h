@@ -28,6 +28,6 @@ size_t	ft_strlen(const char *str);
 void	ft_five_number_sorting(s_stack *a, s_stack *b);
 void	ft_middle_sorting(s_stack *a, s_stack *b, int n);
 void	ft_advanced_sorting(s_stack *a, s_stack *b, int n);
-// void	x_g();
+void	x_g();
 
 #endif

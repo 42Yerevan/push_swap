@@ -6,21 +6,21 @@ void	ft_error(void)
 	exit(-1);
 }
 
-// int		x = 0;
+int		x = 0;
 
-// void	x_g()	
-// {
-// 	x++;
-// }
+void	x_g()	
+{
+	x++;
+}
 
 int     main(int ac, char **av)
 {
-	// int			i;
+	int			i;
 	int			d;
 	s_stack		a;
 	s_stack		b;
 
-	// i = -1;
+	i = -1;
 	d = 0;
 	b.count = 0;
 

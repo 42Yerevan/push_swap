@@ -12,11 +12,9 @@ AR = ar csr
 
 $(NAME) : ${OBJS}
 		${AR} ${NAME} ${OBJS}
+		gcc -L. -lpush_swap push_swap.c -o push_swap
 
 all :	${NAME}
-
-compile:	${NAME}
-			gcc -L. -lpush_swap push_swap.c -o push_swap && ./push_swap  #numbers
 
 clean : 
 		${RM} ${OBJS}
