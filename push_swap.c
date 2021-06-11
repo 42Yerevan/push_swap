@@ -33,8 +33,6 @@ int     main(int ac, char **av)
 		ft_short_sorting(&a);
 	else if (ac <= 6 && d)
 		ft_five_number_sorting(&a, &b);
-	else if (ac <= 101 && d)
-		ft_middle_sorting(&a, &b, (ac - 1));
 	else if (ac <= 501 && d)
 		ft_advanced_sorting(&a, &b, (ac - 1));
 	free(b.array);

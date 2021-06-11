@@ -26,7 +26,6 @@ void    ft_short_sorting(s_stack *stack);
 void    ft_write(char *str);
 size_t	ft_strlen(const char *str);
 void	ft_five_number_sorting(s_stack *a, s_stack *b);
-void	ft_middle_sorting(s_stack *a, s_stack *b, int n);
 void	ft_advanced_sorting(s_stack *a, s_stack *b, int n);
 void	x_g();
 
