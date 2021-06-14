@@ -14,7 +14,6 @@ void       ft_init(s_stack *a, int ac, char **ar)
 
 void        ft_write(char *str)
 {
-	x_g();
 	write(1, str, ft_strlen(str));
 	write(1, "\n", 1);
 }

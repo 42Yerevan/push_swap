@@ -6,13 +6,6 @@ void	ft_error(void)
 	exit(-1);
 }
 
-int		x = 0;
-
-void	x_g()	
-{
-	x++;
-}
-
 int     main(int ac, char **av)
 {
 	int			i;
